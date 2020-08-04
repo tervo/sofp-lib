@@ -102,6 +102,7 @@ test('Test stream error handling', done => {
     var featuresReceived = 0;
 
     fs.on('data', function(obj) {
+
         featuresReceived++;
     });
 
