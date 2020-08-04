@@ -13,7 +13,7 @@ export class FeatureStream extends Readable {
      *
      * @returns false if the filter does not accept this feature
      **/
-    push(item : Item | Error) : boolean {
+    push(item : Item | Error | null) : boolean {
         if (item !== null && item !== undefined) {
             if (item instanceof Error) {
                 this.destroy(item);
@@ -39,5 +39,5 @@ export class FeatureStream extends Readable {
     /**
      * CRS of the features in the stream in URL format. For example 'http://www.opengis.net/def/crs/EPSG/0/3067'
      **/
-    crs : String = null;
+    crs : String | null = null;
 }
