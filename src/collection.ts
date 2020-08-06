@@ -1,4 +1,4 @@
-import {Feature, FeatureStream, Link, Property, Query, QueryParameter} from './';
+import {Feature, FeatureStream, Link, Property, Query, QueryParameter, Extent} from './';
 
 /**
  * Interface for objects representing WFS 3.0 collections
@@ -15,7 +15,7 @@ export interface Collection {
      **/
     links : Link[];
 
-    extent? : string;
+    extent? : Extent;
     crs? : string;
 
     /**
@@ -27,8 +27,8 @@ export interface Collection {
 
     properties : Property[];
 
-    /** 
-     * Name of the time properties that are used in the SOFP core time filter. If this value is set, 
+    /**
+     * Name of the time properties that are used in the SOFP core time filter. If this value is set,
      * only the properties named in this array are used to determine whether the feature is accepted
      * or rejected by the time filter.
      **/
